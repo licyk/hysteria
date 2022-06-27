@@ -23,7 +23,7 @@ Hysteria 是一个功能丰富的，专为恶劣网络环境进行优化的网�
 。
 ### 使用一键脚本安装到VPS  (Littleyu增加一键脚本安装功能，目前仅支持CentOS 7操作系统)
 ```sh
-wget https://raw.githubusercontent.com/lanhebe/proxypool/master/onekey_install.sh && chmod +x onekey_install.sh && ./onekey_install.sh
+wget https://raw.githubusercontent.com/lanhebe/hysteria/master/onekey_installHysteria.sh && chmod +x onekey_installHysteria.sh && ./onekey_installHysteria.sh
 ```
 
 
