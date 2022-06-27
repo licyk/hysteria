@@ -95,9 +95,9 @@ EOF
 
 nohup /root/hysteria/hysteria-linux-amd64 -c /root/hysteria/server.json server >/dev/null 2>/dev/null &
 green "=========="
-    yellow " hysteria安装成功"
+    yellow " hysteria安装成功并已启动"
     green "=========="
-    yellow "请下载client.json到本地端运行"
+    yellow "请下载/root/hysteria/client.json到本地结合V2rayN运行"
 }
 
 remove_hysteria(){
