@@ -30,7 +30,7 @@ fi
 
 install_request_commands() {
   for cmd in "${commands[@]}"; do
-    if ! command -v "$cmd"; then
+    if command -v "$cmd"; then
       echo "Installing $cmd..."
       sudo $install_command "$cmd"
       if [ $? -eq 0 ]; then
