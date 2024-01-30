@@ -263,7 +263,7 @@ else
 fi
 
 echo -e "$(random_color '安装必要依赖中......')"
-install_request_commands
+install_request_commands > /dev/null 2>&1
 echo -e "$(random_color '依赖安装完成')"
 
 installhy2 () {
