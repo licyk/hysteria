@@ -23,6 +23,9 @@ if [ -x "$(command -v apt)" ]; then
 elif [ -x "$(command -v yum)" ]; then
   package_manager="yum"
   install_command="yum install -y"
+elif [ -x "$(command -v apk)" ]; then
+  package_manager="apk"
+  install_command="apk add"
 else
   echo "Unsupported package manager."
   exit 1
