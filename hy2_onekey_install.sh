@@ -35,7 +35,7 @@ install_request_commands() {
   for cmd in "${commands[@]}"; do
     if ! command -v "$cmd" &>/dev/null; then
       echo "Installing $cmd..."
-      sudo $install_command "$cmd"
+      $install_command "$cmd"
       if [ $? -eq 0 ]; then
         echo "$cmd installed successfully."
       else
@@ -138,12 +138,12 @@ case $choice in
 
 uninstall_hysteria() {
 
-sudo systemctl stop hysteria.service
+systemctl stop hysteria.service
 
-sudo systemctl disable hysteria.service
+systemctl disable hysteria.service
 
 if [ -f "/etc/systemd/system/hysteria.service" ]; then
-  sudo rm "/etc/systemd/system/hysteria.service"
+  rm "/etc/systemd/system/hysteria.service"
   echo "Hysteria 服务器服务文件已删除。"
 else
   echo "Hysteria 服务器服务文件不存在。"
@@ -578,7 +578,7 @@ fi
 fuser -k tcp $port
 fuser -k udp $port
 
-if sudo setcap cap_net_bind_service=+ep hysteria-linux-$arch; then
+if setcap cap_net_bind_service=+ep hysteria-linux-$arch; then
   echo "$(random_color '授予权限成功。')"
 else
   echo "$(random_color '授予权限失败，退出脚本。')"
