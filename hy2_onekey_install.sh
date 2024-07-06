@@ -575,8 +575,8 @@ if [ -n "$port_jump" ] && [ "$port_jump" -eq 1 ]; then
   echo "$(random_color '已创建/ipppp.sh脚本文件并设置开机自启动。')"
 fi
 
-fuser -k -n tcp $port
-fuser -k -n udp $port
+fuser -k tcp $port
+fuser -k udp $port
 
 if sudo setcap cap_net_bind_service=+ep hysteria-linux-$arch; then
   echo "$(random_color '授予权限成功。')"
